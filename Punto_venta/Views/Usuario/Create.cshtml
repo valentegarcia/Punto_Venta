@@ -1,0 +1,56 @@
+﻿@model Punto_venta.Models.Usuario
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-lg-offset-4">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group">
+                            <label for="des_usuario">@Html.DisplayNameFor(m => m.des_usuario)</label>
+                            @Html.TextBoxFor(m => m.des_usuario, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.des_usuario, "", new { @style = "color : red;" })
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">@Html.DisplayNameFor(m => m.nombre)</label>
+                            @Html.TextBoxFor(m => m.nombre, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.nombre, "", new { @style = "color : red;" })
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">@Html.DisplayNameFor(m => m.telefono)</label>
+                            @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="email">@Html.DisplayNameFor(m => m.email)</label>
+                            @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="password">@Html.DisplayNameFor(m => m.password)</label>
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @style = "color : red;" })
+                        </div>
+                        <input type="submit"  class="btn btn-default"/>
+                        @Html.ActionLink("Usuario registrado" , "Index")
+                    }
+                </div>
+            </div>            
+        </div>         
+    </div>
+</body>
+</html>
